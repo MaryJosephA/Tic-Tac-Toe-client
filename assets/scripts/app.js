@@ -46,13 +46,14 @@ const getWinner = function () {
 }
 
 const boxes = document.querySelectorAll('#main div')
+const xor0 = 0
 for (let i = 0; i < boxes.length; i++) {
   boxes[i].onclick = function () {
     if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
-      if (i % 2 === 0) {
+      if (xor0 % 2 === 0) {
         this.innerHTML = 'X'
         getWinner()
-        i += 1
+        xor0 += 1
       } else {
         console.log(i)
         this.innerHTML = 'O'
