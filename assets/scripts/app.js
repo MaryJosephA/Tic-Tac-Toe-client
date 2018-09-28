@@ -29,36 +29,35 @@ const getWinner = function () {
 
   if (box1.innerHTML !== '' && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML) {
     console.log('win')
-  } else if (box4.innerHTML !== '' && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerhtml) {
+  } else if (box4.innerHTML !== '' && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML) {
     console.log('win')
-  } else if (box7.innerHTML !== '' && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerhtml) {
+  } else if (box7.innerHTML !== '' && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML) {
     console.log('win')
-  } else if (box1.innerHTML !== '' && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerhtml) {
+  } else if (box1.innerHTML !== '' && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
     console.log('win')
-  } else if (box2.innerHTML !== '' && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerhtml) {
+  } else if (box2.innerHTML !== '' && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML) {
     console.log('win')
-  } else if (box3.innerHTML !== '' && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerhtml) {
+  } else if (box3.innerHTML !== '' && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML) {
     console.log('win')
-  } else if (box1.innerHTML !== '' && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerhtml) {
+  } else if (box1.innerHTML !== '' && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML) {
     console.log('win')
-  } else if (box3.innerHTML !== '' && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerhtml) {
+  } else if (box3.innerHTML !== '' && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML) {
   }
 }
 
 const boxes = document.querySelectorAll('#main div')
-const xor0 = 0
+let xoro = 0
 for (let i = 0; i < boxes.length; i++) {
   boxes[i].onclick = function () {
     if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
-      if (xor0 % 2 === 0) {
+      if (xoro % 2 === 0) {
         this.innerHTML = 'X'
         getWinner()
-        i++
+        xoro += 1
       } else {
-        console.log(i)
         this.innerHTML = 'O'
         getWinner()
-        // XorO += 1
+        xoro += 1
       }
     }
   }
