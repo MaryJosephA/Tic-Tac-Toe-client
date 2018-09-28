@@ -6,8 +6,8 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-// $(() => {
-// })
+$(() => {
+})
 // const turn = document.getElementByid('turn')
 //  boxes = document.querySelectorAll("#main div"), XorO = 0
 //  const selectWinnerBoxes = function(b1, b2, b3) {
