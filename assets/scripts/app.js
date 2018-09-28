@@ -53,7 +53,7 @@ for (let i = 0; i < boxes.length; i++) {
       if (xor0 % 2 === 0) {
         this.innerHTML = 'X'
         getWinner()
-        xor0 += 1
+        i++
       } else {
         console.log(i)
         this.innerHTML = 'O'
