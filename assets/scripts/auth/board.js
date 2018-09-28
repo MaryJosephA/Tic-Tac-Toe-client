@@ -1,19 +1,5 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
-const authEvents = require('./auth/events.js')
-// const game = require('./auth/board.js')
-$(() => {
-  $('#sign-up-form').on('submit', authEvents.onSignUp)
-  $('#sign-in-form').on('submit', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out-button').on('click', authEvents.onSignOut)
-  // $('create-example-form').on('submit', exampleevents.onCrea
-})
 const getWinner = function () {
   const box1 = document.getElementById('box1')
   const box2 = document.getElementById('box2')
@@ -50,8 +36,6 @@ for (let i = 0; i < boxes.length; i++) {
     if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
       if (xoro % 2 === 0) {
         this.innerHTML = 'X'
-        document.innerHTML('its Os turn')
-        console.log(xoro)
         getWinner()
         xoro += 1
       } else {

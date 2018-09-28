@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,51 +13,25 @@
     </head>
     <body>
       <h1>Tic Tac Toe</h1>
-      <!-- <div class="container">
-        <div class="container">
-          <div class="row">
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="w-100"></div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-          </div>
-        </div> -->
-  <!-- <div class="row">
-    <div class="col-sm-2">
-      1
-    </div>
-    <div class="col-sm-2">
-  2
-    </div>
-    <div class="col-sm-2">
-      3
-    </div><br/>
-    <div class="row">
-      <div class="col-sm-2">
-        4
-      </div>
-      <div class="col-sm-2">
-    5
-  </div><br/>
-      <div class="col-sm-2">
-        6
-      </div><br/>
-      <div class="row">
-        <div class="col-sm-2">
-          7
-        </div>
-        <div class="col-sm-2">
-      8
-        </div>
-        <div class="col-sm-2">
-          9
-        </div>
-  </div>
-</div> -->
+  <h3 id="display-message"></h3>
+      <form id="sign-up-form">
+        <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
+        <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
+        <input required placeholder="confirm Password" name="credentials[password_confirmation]" type="password"/>
+        <input type="submit">
 
-
+      </form>
+      <h3 id="sign-in">Sign In</h3>
+    <form id="sign-in-form">
+      <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
+      <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
+      <input type="submit"/>
+    </form >
+    <h3> change password</h3>
+      <form id="change-password" class="hidden"> change passwords
+        <input required placeholder="old password" name="passwords[old]"type="password"/>
+        <input required placeholder="New password" name="passwords[new]"type ="password"/>
+        <input type="submit"/></form>
 
       <div class ="container" id="main">
         <span id="turn">Play</span>
