@@ -69,9 +69,10 @@ const board = ['', '', '', '', '', '', '', '', '']
 // board[5] = currentPlayer
 // const count = 0
 for (let i = 1; i <= board.length; i++) {
-  if (board[i] !== 'x' && board[i] !== 'O') {
-    if (board[i] % 2 === 0) {
-      board[i] += 1
+  if (i !== 'x' && i !== 'O') {
+    if (i % 2 === 0) {
+      // getWinner()
+      // board[i] += 1
       console.log(player1)
     } else {
       console.log(player2)
