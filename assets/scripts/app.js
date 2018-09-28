@@ -8,74 +8,76 @@
 
 // $(() => {
 // })
+// const turn = document.getElementByid('turn')
+//  boxes = document.querySelectorAll("#main div"), XorO = 0
+//  const selectWinnerBoxes = function(b1, b2, b3) {
+//    b1.classList.add('win')
+//    b2.classList.add('win')
+//    b3.classList.add('win')
+//  }
+
 const getWinner = function () {
-  const a = 1
-  const b = 2
-  const c = 3
-  const d = 4
-  const e = 5
-  const f = 6
-  const g = 7
-  const h = 8
-  const k = 9
-  if (a !== '' && a === b && a === c) {
+  const box1 = document.getElementById('box1')
+  const box2 = document.getElementById('box2')
+  const box3 = document.getElementById('box3')
+  const box4 = document.getElementById('box4')
+  const box5 = document.getElementById('box5')
+  const box6 = document.getElementById('box6')
+  const box7 = document.getElementById('box7')
+  const box8 = document.getElementById('box8')
+  const box9 = document.getElementById('box9')
+
+  if (box1.innerHTML !== '' && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML) {
     console.log('win')
-  } else if (d !== '' && d === e && e === f) {
+  } else if (box4.innerHTML !== '' && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerhtml) {
     console.log('win')
-  } else if (f !== '' && f === h && f === k) {
+  } else if (box7.innerHTML !== '' && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerhtml) {
     console.log('win')
-  } else if (a !== '' && a === d && a === g) {
+  } else if (box1.innerHTML !== '' && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerhtml) {
     console.log('win')
-  } else if (b !== '' && b === e && b === f) {
+  } else if (box2.innerHTML !== '' && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerhtml) {
     console.log('win')
-  } else if (c !== '' && b === e && b === h) {
+  } else if (box3.innerHTML !== '' && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerhtml) {
     console.log('win')
-  } else if (a !== '' && a === e && a === k) {
+  } else if (box1.innerHTML !== '' && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerhtml) {
     console.log('win')
-  } else if (c !== '' && c === e && c === g) {
+  } else if (box3.innerHTML !== '' && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerhtml) {
   }
 }
 
-// 1.  Start with a game board of 9 empty spaces
-// const board = ['', '', '', '', '', '', '', '', '']
-//
-// // 2.  Start the current player as x
-// const currentPlayer = 'x'
-//
-// // 3.  Add player x to a position on the board, position 5
-// board[5] = currentPlayer
-
-// set event onclick
-// boxes => all boxes
-// X_or_o => to set x or 0 into the box
-// const board = ['', '', '', '', '', '', '', '', '']
-//
-// // 2.  Start the current player as x
-// let currentPlayer = 'x'
-//
-// // 3.  Add player x to a position on the board, position 5
-// board[5] = currentPlayer
-// getWinner()
-// console.log(currentPlayer)
-// // 4.  Switch player to o
-// currentPlayer = 'o'
-// board[7] = currentPlayer
-// console.log(currentPlayer)
-// 5.  Add player o to position on the board, position 7
-const player1 = 'x'
-const player2 = 'O'
-const board = ['', '', '', '', '', '', '', '', '']
-// const currentPlayer = 'X'
-// board[5] = currentPlayer
-// const count = 0
-for (let i = 1; i <= board.length; i++) {
-  if (i !== 'x' && i !== 'O') {
-    if (i % 2 === 0) {
-      // getWinner()
-      // board[i] += 1
-      console.log(player1)
-    } else {
-      console.log(player2)
+const boxes = document.querySelectorAll('#main div')
+for (let i = 0; i < boxes.length; i++) {
+  boxes[i].onclick = function () {
+    if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
+      if (i % 2 === 0) {
+        this.innerHTML = 'X'
+        getWinner()
+        i += 1
+      } else {
+        console.log(i)
+        this.innerHTML = 'O'
+        getWinner()
+        // XorO += 1
+      }
     }
   }
 }
+
+// const player1 = 'x'
+// const player2 = 'O'
+// const board = ['', '', '', '', '', '', '', '', '']
+// // const currentPlayer = 'X'
+// // board[5] = currentPlayer
+// // const count = 0
+// for (let i = 0; i <= board.length; i++) {
+//   if (i !== 'x' && i !== 'O') {
+//     if (i % 2 === 0) {
+//       // getWinner()
+//       // board[i] += 1
+//       console.log(player1)
+//     } else {
+//       console.log(player2)
+//     }
+//   }
+// }
+//
