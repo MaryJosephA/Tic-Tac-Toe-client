@@ -1,29 +1,38 @@
 const store = require('../store.js')
+
 const signUpSucess = function () {
   $('#display-message').html('sign up successful')
   $('#display-message').css('color', 'green')
-  $('#main').hide()
+  $('#main').show()
+  $('#click').show()
+  $('#sign-up-form').hide()
   $('#sign-up-form').trigger('reset')
 }
+
 const signUpFailure = function () {
   $('display-message').html('Something went wrong please try again')
   $('display-message').css('color', 'green')
   $('sign-in-form').trigger('reset')
 }
 const signInSuccess = function (response) {
-  $('#display-message').html('Sign in successful')
+  $('#display-message').html('sign in successful')
   $('#display-message').css('color', 'green')
+  $('#sign-in-form').hide()
+  $('#sign-up-form').hide()
   $('#main').show()
+  $('#click1').show()
+  $('#click').show()
+  $('#sign-out-button').show()
   $('#sign-in-form').trigger('reset')
   store.user = response.user
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
   $('#change-password').removeClass('hidden')
-  $('#sign-out-button').removeClass('hidden')
-  console.log($('#change-password'))
+  $('#sign-out-button').addClass('hidden')
+  // console.log($('#change-password'))
 }
 const signInFailure = function () {
-  $('#display-message').html('Something went wrong, please try again')
+  $('#display-message').html('oops please try again')
   $('#display-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
 }

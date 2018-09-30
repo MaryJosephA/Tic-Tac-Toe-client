@@ -8,12 +8,41 @@
 const authEvents = require('./auth/events.js')
 // const game = require('./auth/board.js')
 $(() => {
+  // $('#sign-up-form').show()
+  $('#main').show()
+  $('#click1').show()
+  $('.square').click(function () {
+    $('#main').show()
+  })
+  // $('button').click(function () {
+  //   $('#sign-up-form').show()
+  //   $('#sign-in-form').show()
+  //   $('#sign-out-button').show()
+  //   $('button').hide()
+  // })
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
   // $('create-example-form').on('submit', exampleevents.onCrea
 })
+const turn = document.getElementById('turn')
+const boxes = document.querySelectorAll('#main div')
+let xoro = 0
+const selectWinnerBoxes = function (b1, b2, b3) {
+  b1.classList.add('win')
+  b2.classList.add('win')
+  b3.classList.add('win')
+  turn.innerHTML = b1.innerHTML + ' Won Congrats'
+  turn.style.fontsize = '40px'
+  // b2.style.background = 'red'
+  // b3.style.background = 'red'
+}
+const selecttie = document.getElementById('square')
+const tie = function (c1, c2, c3) {
+  square.onClick.classList.remove('win')
+}
+
 const getWinner = function () {
   const box1 = document.getElementById('box1')
   const box2 = document.getElementById('box2')
@@ -26,39 +55,50 @@ const getWinner = function () {
   const box9 = document.getElementById('box9')
 
   if (box1.innerHTML !== '' && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML) {
-    console.log('win')
+    selectWinnerBoxes(box1, box2, box3)
   } else if (box4.innerHTML !== '' && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML) {
-    console.log('win')
+    selectWinnerBoxes(box4, box5, box6)
   } else if (box7.innerHTML !== '' && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML) {
-    console.log('win')
+    selectWinnerBoxes(box7, box8, box9)
   } else if (box1.innerHTML !== '' && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
-    console.log('win')
+    selectWinnerBoxes(box1, box4, box7)
   } else if (box2.innerHTML !== '' && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML) {
-    console.log('win')
+    selectWinnerBoxes(box2, box5, box8)
   } else if (box3.innerHTML !== '' && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML) {
-    console.log('win')
+    selectWinnerBoxes(box3, box6, box9)
   } else if (box1.innerHTML !== '' && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML) {
-    console.log('win')
+    selectWinnerBoxes(box1, box5, box9)
   } else if (box3.innerHTML !== '' && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML) {
+    selectWinnerBoxes(box3, box5, box7)
   }
 }
 
-const boxes = document.querySelectorAll('#main div')
-let xoro = 0
+// const boxes = document.querySelectorAll('#main div')
+// let xoro = 0
 for (let i = 0; i < boxes.length; i++) {
   boxes[i].onclick = function () {
     if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
       if (xoro % 2 === 0) {
         this.innerHTML = 'X'
-        document.innerHTML('its Os turn')
+        // document.innerHTML('its Os turn')
         console.log(xoro)
+        turn.innerHTML = 'O Turn Now'
         getWinner()
         xoro += 1
       } else {
         this.innerHTML = 'O'
+        turn.innerHTML = 'X Turn Now'
         getWinner()
         xoro += 1
       }
     }
   }
 }
+// const replay1 = document.getElementById('square')
+//   for (let i = 0; i < boxes.length; i++) {
+//
+//     boxes[i].onClick.classList.remove('win')
+//     turn.innerHTML = 'Play'
+//     turn.style.fontsize = '25px'
+//   }
+// }

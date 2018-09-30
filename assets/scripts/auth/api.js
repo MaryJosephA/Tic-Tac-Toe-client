@@ -34,7 +34,6 @@ const signOut = function () {
       Authorization: `Token token=${store.user.token}`
     },
     method: 'DELETE'
-
   })
 }
 module.exports = {
