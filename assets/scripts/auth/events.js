@@ -12,6 +12,7 @@ const onSignUp = function (event) {
     .then(ui.signUpSucess)
     .then(ui.signUpFailure)
 }
+
 const onSignIn = function (event) {
   event.preventDefault()
 
@@ -41,9 +42,44 @@ const onSignOut = function () {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+// const onUpdategame = function (event) {
+//   event.preventDefault()
+//   console.log('onUpdateExample ran!')
+//
+//   const data = getFormFields(event.target)
+//   const games = data.games
+//
+//   if (games.text === '') {
+//     $('#message').html('<p>Text is required</p>')
+//     $('#message').css('background-color', 'red')
+//     console.log('Text is required!')
+//     return false
+//   }
+//   if (games.id.length !== 0) {
+//     api.update(data)
+//       .then(ui.onUpdateSuccess)
+//       .catch(ui.onUpdateFailure)
+//   } else {
+//     $('#message').html('<p>Please provide an user id!</p>')
+//     $('#message').css('background-color', 'red')
+//     console.log('Please provide an user id!')
+//   }
+// }
+// const onCreateGame = function (event) {
+//   event.preventDefault()
+//   console.log('Game Created!')
+//
+//   const data = getFormFields(event.target)
+//   api.create(data)
+//     .then(ui.onCreateSuccess)
+//     .catch(ui.onCreateFailure)
+// }
+//
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut
+  // onUpdategame,
+  // onCreateGame
 }

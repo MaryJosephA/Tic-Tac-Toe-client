@@ -26,6 +26,7 @@ h1{
  button{
 background: #26C281;
  color: #fff;
+ float: right;
 font-weight: bold;
 border: 1px solid yellow;
  cursor: pointer;
@@ -40,4 +41,8 @@ margin: 8px auto;
 .win{
   background: #F9690E;
   color: #fff
+}
+.sign-in-form{
+  align-content: center;
+  align-items: center;
 }

@@ -15,13 +15,16 @@ const signUpFailure = function () {
   $('sign-in-form').trigger('reset')
 }
 const signInSuccess = function (response) {
-  $('#display-message').html('sign in successful')
+  $('#display-message').html('sign in successful' + '')
+  // $('#display=message').html('email')
+  // $('#sign-in-form').get(0)
+  // $('#content').append('<p> ID: ${games.id}</p>')
   $('#display-message').css('color', 'green')
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#main').show()
-  $('#click1').show()
-  $('#click').show()
+  // $('#click1').show()
+  // $('#click').show()
   $('#sign-out-button').show()
   $('#sign-in-form').trigger('reset')
   store.user = response.user
@@ -39,6 +42,7 @@ const signInFailure = function () {
 const signOutSuccess = function () {
   $('#display-message').html('Sign Out successful')
   $('#display-message').css('color', 'green')
+  $('#sign-in-form').show()
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
   $('#change-password').addClass('hidden')
@@ -58,6 +62,32 @@ const changePasswordFailure = function () {
   $('display-message').css('color', 'green')
   $('change-password').trigger('reset')
 }
+// const onCreateSuccess = function (data) {
+//   $('#message').text('Example successfully created')
+//   $('#message').removeClass()
+//   $('#message').addClass('success')
+//   console.log('onCreateSuccess ran. Data is :', data)
+// }
+//
+// const onCreateFailure = function (error) {
+//   $('#message').text('Error on creating example')
+//   $('#message').removeClass()
+//   $('#message').addClass('failure')
+//   console.error('onCreateFailure ran. Error is :', error)
+// }
+// const onUpdateSuccess = function () {
+//   $('#message').text('Game successfully updated')
+//   $('#message').removeClass()
+//   $('#message').addClass('success')
+//   console.log('Example successfully updated')
+// }
+// const onUpdateFailure = function (error) {
+//   $('#message').text('Error on updating example')
+//   $('#message').removeClass()
+//   $('#message').addClass('failure')
+//   console.error('onUpdateFailure ran. Error is :', error)
+// }
+
 module.exports = {
   signUpSucess,
   signUpFailure,
@@ -67,5 +97,8 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure
-
+  // onCreateSuccess,
+  // onCreateFailure,
+  // onUpdateSuccess,
+  // onUpdateFailure
 }
