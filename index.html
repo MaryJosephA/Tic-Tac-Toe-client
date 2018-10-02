@@ -17,46 +17,44 @@
   <h3 id="display-message"></h3>
 
 
-  <button id="sign-out-button" class="hidden">Sign Out </button><br/><br/>
-
-<div id="content"></div>
+  <button id="sign-out-button" class="hidden">Sign Out </button>
+   <button id="new-game" class="newgame"> New Game </button><br/><br/>
       <form id="sign-up-form">
         <h3 id="sign-up">Sign Up</h3>
         <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
         <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
         <input required placeholder="confirm Password" name="credentials[password_confirmation]" type="password"/>
-        <input id= signup type="submit" value="signup">
+        <input id= signup type="submit" value="Sign Up">
       </form>
 
     <form id="sign-in-form">
       <h3 id="sign-in">Sign In</h3>
       <input id="Email"required placeholder="Enter Email" name="credentials[email]" type="email"/></br></br>
       <input required placeholder="Enter Password" name="credentials[password]" type="password"/></br></br>
-      <input id="signin" type="submit" value ="Signin"/>
+      <input id="signin" type="submit" value ="Sign In"/>
       <!-- <button id="sign-up" class="signup">Sign Up</button> -->
     </form >
+    <div class ="container" id="main">
+      <span id="turn"> Play</span>
+      <div class ="box" id="box1"></div>
+      <div class ="box" id="box2"></div>
+      <div class ="box" id="box3"></div>
+      <div class ="box" id="box4"></div>
+      <div class ="box" id="box5"></div>
+      <div class ="box" id="box6"></div>
+      <div class ="box" id="box7"></div>
+      <div class ="box" id="box8"></div>
+      <div class ="box" id="box9"></div>
+    </div>
 
     <h3> change password</h3>
       <form id="change-password" class="hidden">
         <input required placeholder="old password" name="passwords[old]"type="password"/>
         <input required placeholder="New password" name="passwords[new]"type ="password"/>
-        <input type="submit"/></form>
+        <input type="submit" value=change Password/></form>
     <!-- <button id="sign-out-button" onclick="replay ()">Sign Out </button><br/> -->
-      <div class ="container" id="main">
-        <h1 id ="tie">result</h1>
-        <span id="turn"> Play</span>
-        <div class ="box" id="box1"></div>
-        <div class ="box" id="box2"></div>
-        <div class ="box" id="box3"></div>
-        <div class ="box" id="box4"></div>
-        <div class ="box" id="box5"></div>
-        <div class ="box" id="box6"></div>
-        <div class ="box" id="box7"></div>
-        <div class ="box" id="box8"></div>
-        <div class ="box" id="box9"></div>
-        <button class="square" onclick="replay()" >Play Again </button>
 
-      </div>
+
 
     </body>
 </html>
