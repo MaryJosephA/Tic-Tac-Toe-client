@@ -42,6 +42,16 @@ const onSignOut = function () {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onCreateGame = function (event) {
+  event.preventDefault()
+  console.log('Game Created!')
+
+  const data = getFormFields(event.target)
+  api.create(data)
+    .then(ui.onCreateSuccess)
+    .catch(ui.onCreateFailure)
+}
+
 // const onUpdategame = function (event) {
 //   event.preventDefault()
 //   console.log('onUpdateExample ran!')
@@ -65,21 +75,12 @@ const onSignOut = function () {
 //     console.log('Please provide an user id!')
 //   }
 // }
-// const onCreateGame = function (event) {
-//   event.preventDefault()
-//   console.log('Game Created!')
-//
-//   const data = getFormFields(event.target)
-//   api.create(data)
-//     .then(ui.onCreateSuccess)
-//     .catch(ui.onCreateFailure)
-// }
-//
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
   // onUpdategame,
-  // onCreateGame
+  onCreateGame
 }

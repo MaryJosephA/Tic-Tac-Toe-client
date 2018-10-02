@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 * {box-sizing: border-box;}
-
+body{
+  background-color: powderblue;
+}
 .container {width: 300px; overflow: hidden; margin: 50px auto 0 auto auto}
 
 .container span{width:90%; display: block;text-align: center;
@@ -25,8 +27,9 @@ h1{
 }
  button{
 background: #26C281;
- color: #fff;
- float: right;
+display: inline-block;
+float:right;
+color: #fff;
 font-weight: bold;
 border: 1px solid yellow;
  cursor: pointer;
@@ -35,9 +38,13 @@ height: 40px; font-size: 22px;
 display: block;
 margin: 8px auto;
 }
-.hidden{
-  button: right;
-}
+// .hidden , .new-game{
+//   display: inline-block;
+//   float: right;
+// }
+// .newgame{
+//   float: right;
+// }
 .win{
   background: #F9690E;
   color: #fff
