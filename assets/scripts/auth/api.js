@@ -1,6 +1,9 @@
 'use strict'
 const config = require('../config.js')
 const store = require('../store.js')
+// const board = require('./../../../lib/board.js')
+// const gameData = require('./auth/Games/board.js')
+// Users/maryabraham/wdi/projects/Tic-Tac-Toe-client/assets/scripts/auth/Games
 
 const signUp = function (gameData) {
   return $.ajax({
@@ -39,26 +42,48 @@ const signOut = function () {
   })
 }
 const create = function (gameData) {
-  console.log('data: ', gameData)
+  // console.log('data: ', gameData)
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: `Token token=${store.user.token}`
     },
     gameData
 
     // data: data
   })
 }
+const update = function (gameData) {
+  return $.ajax({
+    url: config.apiUrl + `/games/${store.game.id}`,
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    method: 'PATCH',
+    data: gameData
+  })
+}
+const showStats = function (gameData) { /// ///////////////////////////////////////////////////////
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+//       'game': {
+//         'cell': {
+//           'index': event.target.data,
+//           'value': $(event.target).this.innerHTML
+//         },
+//         'over': store.gameover
+//       }
+//     }
+//   })
+// }
 
-// const update = function (gameData) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/' + gameData.games.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
 //     gameData
 //     // data: data
 //   })
@@ -69,6 +94,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  // update,
-  create
+  update,
+  create,
+  showStats
 }
