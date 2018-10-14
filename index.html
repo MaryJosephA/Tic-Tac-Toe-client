@@ -15,48 +15,71 @@
       <h1>Tic Tac Toe</h1>
 
   <h3 id="display-message"></h3>
+    <h2 id="game-message"></h2>
 
 
-  <button id="sign-out-button" class="hidden">Sign Out </button><br/><br/>
+  <button id="sign-out-button" class="hidden">Sign Out </button>
+  <button id="new-game" class="newgame">New Game </button>
+  <button id="view-game" class="newgame">View Game</button><br/><br/><br/>
 
-<div id="content"></div>
-      <form id="sign-up-form">
-        <h3 id="sign-up">Sign Up</h3>
+
+      <form id="sign-up-form" class=sign-up>
+        <!-- <h3 id="sign-up">Sign Up</h3> -->
         <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
         <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
         <input required placeholder="confirm Password" name="credentials[password_confirmation]" type="password"/>
-        <input id= signup type="submit" value="signup">
+        <input id=signup type="submit" value="signup">
+      </form><br/><br/>
+
+    <form id="sign-in-form" class=sign-in>
+      <!-- <h3 id="sign-in">Sign In</h3> -->
+      <input id="Email"required placeholder="Enter Email" name="credentials[email]" type="email"/>
+      <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
+      <input id="signin" type="submit" value ="Signin"/>
+    </form><br/>
+
+    <!-- <form>
+  <input name="game[cell][index]" type="text" value="0">
+  <input name="game[cell][value]" type="text" value="x">
+  <input name="game[over]" type="text" value="false">
+</form> -->
+
+
+      <div class ="container" id="main">
+
+        <span id="turn"> Play</span>
+        <div class ="box" id="box1" data-index=0></div>
+        <div class ="box" id="box2" data-index=1></div>
+        <div class ="box" id="box3" data-index=2></div>
+        <div class ="box" id="box4" data-index=3></div>
+        <div class ="box" id="box5" data-index=4></div>
+        <div class ="box" id="box6" data-index=5></div>
+        <div class ="box" id="box7" data-index=6></div>
+        <div class ="box" id="box8" data-index=7></div>
+        <div class ="box" id="box9" data-index=8></div>
+  </div>
+  <h3 id="change-password-header"> change password</h3>
+    <form id="change-password" class="hidden">
+      <input required placeholder="old password" name="passwords[old]"type="password"/>
+      <input required placeholder="New password" name="passwords[new]"type ="password"/>
+      <input id=cpassword type="submit"value ="change"/>
       </form>
 
-    <form id="sign-in-form">
-      <h3 id="sign-in">Sign In</h3>
-      <input id="Email"required placeholder="Enter Email" name="credentials[email]" type="email"/></br></br>
-      <input required placeholder="Enter Password" name="credentials[password]" type="password"/></br></br>
-      <input id="signin" type="submit" value ="Signin"/>
-      <!-- <button id="sign-up" class="signup">Sign Up</button> -->
-    </form >
 
-    <h3> change password</h3>
-      <form id="change-password" class="hidden">
-        <input required placeholder="old password" name="passwords[old]"type="password"/>
-        <input required placeholder="New password" name="passwords[new]"type ="password"/>
-        <input type="submit"/></form>
-    <!-- <button id="sign-out-button" onclick="replay ()">Sign Out </button><br/> -->
-      <div class ="container" id="main">
-        <h1 id ="tie">result</h1>
-        <span id="turn"> Play</span>
-        <div class ="box" id="box1"></div>
-        <div class ="box" id="box2"></div>
-        <div class ="box" id="box3"></div>
-        <div class ="box" id="box4"></div>
-        <div class ="box" id="box5"></div>
-        <div class ="box" id="box6"></div>
-        <div class ="box" id="box7"></div>
-        <div class ="box" id="box8"></div>
-        <div class ="box" id="box9"></div>
-        <button class="square" onclick="replay()" >Play Again </button>
+    <!-- <form id="game-show" class="border">
+    <fieldset>
+      <legend>Get All games</legend>
+      <input id="show" type="submit" value="Get All games">
+    </fieldset>
+  </form> -->
 
-      </div>
+    <!-- <form id="game-show" class="border">
+     <fieldset>
+      <legend>Get One Example</legend> -->
+      <!-- <input type="text" name="game[id]" placeholder="Enter game ID"/>
+      <input type="submit"/>
+        </form>  -->
+
 
     </body>
 </html>
